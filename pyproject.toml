@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "django-for-professionals"
+version = "0.1.0"
+description = "Best practices for evolving as a Dev"
+authors = ["jaqueline <jaquelinesa.82@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
