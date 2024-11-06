@@ -20,4 +20,9 @@ Run the local server:
 python manage.py runserver
 ```
 
+To run automatic tests with pytest:
+```bash
+pytest backend
+```
+
 
