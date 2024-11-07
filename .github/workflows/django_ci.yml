@@ -25,4 +25,4 @@ jobs:
           poetry install --with dev --sync
  
       - name: Running django tests with coverage
-        run: poetry run pytest devpro --cov=devpro --cov-fail-under=70
+        run: poetry run pytest backend --cov=backend --cov-fail-under=70
