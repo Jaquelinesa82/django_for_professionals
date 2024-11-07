@@ -21,8 +21,14 @@ python manage.py runserver
 ```
 
 To run automatic tests with pytest:
+
 ```bash
 pytest backend
 ```
 
+To run automatic tests with pytest and generate a coverage report:
+
+```bash
+pytest backend/ --cov=dbackend --cov-report html
+```
 
