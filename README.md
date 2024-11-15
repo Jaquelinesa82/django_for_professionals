@@ -29,6 +29,6 @@ pytest backend
 To run automatic tests with pytest and generate a coverage report:
 
 ```bash
-pytest backend/ --cov=dbackend --cov-report html
+pytest backend/ --cov=backend --cov-report html
 ```
 

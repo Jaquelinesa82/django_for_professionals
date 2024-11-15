@@ -10,15 +10,36 @@ readme = "README.md"
 python = "^3.12"
 django = "^5.1.2"
 
-
 [tool.poetry.group.dev.dependencies]
 pytest-django = "^4.9.0"
 pytest = "^8.3.3"
 pytest-cov = "^6.0.0"
+ruff = "^0.7.2"
+taskipy = "^1.14.0"
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "backend.settings"
 python_files = ["test*.py", "*._test"]
+
+[ruff.tool]
+line-length = 120
+exclude = ['./backend/core/migrations']
+
+[ruff.tool.lint]
+select = ['I', 'F', 'E', 'W', 'PL', 'PT']
+ignore = ["PLR2004"]
+
+[ruff.tool.format]
+quate-style = 'single'
+
+[tool.taskipy.tasks]
+lint = 'ruff check . && ruff check . --diff'
+format = 'ruff check . --fix && ruff format .' 
+run = 'python manage.py runserver'
+pre_test = 'task lint'
+test = 'pytest backend/ -s -x --cov=backend -vv'
+post_test = 'coverage html'
+
 
 [build-system]
 requires = ["poetry-core"]
